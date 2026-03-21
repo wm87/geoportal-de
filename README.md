@@ -31,8 +31,10 @@ Täglich aktualisierte Metadaten aus Bund und allen 16 Bundesländern, eine voll
 ## Inhaltsverzeichnis
 
 - [Features](#-features)
-- [Funktionsübersicht](#-funktionsübersicht)
+- [GIS-Arbeitsumgebung](#️-gis-arbeitsumgebung)
 - [Daten & Harvesting](#-daten--harvesting)
+- [API](#-api)
+- [Monitoring & Administration](#-monitoring--administration)
 - [Tech Stack](#️-tech-stack)
 - [Lizenzmodell](#-lizenzmodell)
 - [Zugang & Demo](#-zugang--demo)
@@ -74,73 +76,69 @@ Täglich aktualisierte Metadaten aus Bund und allen 16 Bundesländern, eine voll
 
 ---
 
-## 🗺 Funktionsübersicht
+## 🗺️ GIS-Arbeitsumgebung
 
-<details>
-<summary><strong>Metadatenkatalog</strong></summary>
+Die browserbasierte Kartenumgebung unterstützt WMS, WMTS und WFS vollständig – inklusive Capabilities-Parsing, Proxy-Betrieb und mehrerer Projektionen.
 
-- Volltextsuche über Titel, Abstract und Keywords
-- Filter nach Organisation und Diensttyp
-- Detailansicht mit Lizenz, Gebühren und Kontaktinformationen
-- One-Click Layer-Integration in die Kartenansicht
+<br>
 
-</details>
+### WMS-Dienste
 
-<details>
-<summary><strong>Layerverwaltung</strong></summary>
+WMS-Dienste werden per URL eingebunden, Capabilities automatisch geparst, Legenden abgerufen und Projektionen geprüft. Das folgende Beispiel zeigt einen Digitalen Orthophoto-Dienst (DOP) des Freistaates Sachsen.
 
-- Drag & Drop Sortierung
-- Individuelle Transparenzsteuerung pro Layer
-- WMS-Legenden-Anzeige
-- WFS-Attributanzeige und GeoJSON-Export
+![WMS – Digitales Orthophoto Sachsen](assets/dop_wms_sn.png)
 
-</details>
+<br>
 
-<details>
-<summary><strong>Diensteintegration</strong></summary>
+### WFS Feature-Abfrage
 
-- WMS, WMTS und WFS via URL
-- Capabilities Parsing mit automatischem Fallback
-- WMTS TileMatrix-Erkennung je Projektion
-- Proxy-Betrieb ohne CORS-Einschränkungen
+WFS-Dienste werden in drei Schritten eingebunden: Dienst-URL eingeben, Layer auswählen und Features im sichtbaren Kartenausschnitt laden. Attribute werden direkt in der Kartenansicht angezeigt und können als GeoJSON exportiert werden.
 
-</details>
+| Schritt 1 – Layer auswählen | Schritt 2 – Layer konfigurieren |
+|---|---|
+| ![WFS Layer auswählen](assets/wfs_layer_choose.png) | ![WFS Layer konfigurieren](assets/wfs_layer_choose_2.png) |
 
-<details>
-<summary><strong>Kartenfunktionen</strong></summary>
+![WFS GeoJSON Download](assets/wfs_layer_download.png)
 
-- **Basemaps:** OSM, BKG, OpenTopoMap
-- **Projektionen:** EPSG 3857, 4326, 25832, 25833, 31467
-- Geolokalisierung, Navigation und Zoom-Werkzeuge
+<br>
 
-</details>
+### Ressourcen & Diensteübersicht
 
-<details>
-<summary><strong>Analyse & Export</strong></summary>
+Der Ressourcen-Browser zeigt alle eingebundenen und verfügbaren Dienste mit Statusindikator, Diensttyp und Metadaten auf einen Blick.
 
-- Längen- und Flächenmessung im Kartenausschnitt
-- PDF-Export (A0–A5, 72–300 DPI, PNG/JPEG)
-- Gitternetz- und Metadaten-Overlay im Export
+![Ressourcenübersicht](assets/resources.png)
 
-</details>
+<br>
 
-<details>
-<summary><strong>Suche</strong></summary>
+### Externe Dienste
 
-- Nominatim-Integration (OpenStreetMap)
-- Deutschlandweite Adress- und Ortssuche
+Externe Dienstquellen wie WMS, WMTS, WFS können zentral eingebunden werden.
 
-</details>
+![Externe Dienste](assets/external_services.png)
 
-<details>
-<summary><strong>Admin & Monitoring</strong></summary>
+<br>
 
-- Django Admin Dashboard
-- Celery + Flower für Aufgabenverwaltung
-- Prometheus-Metriken
-- Strukturierte Betriebsprotokolle
+### Layer-Import & Projektwiederherstellung
 
-</details>
+Komplette Layer-Setups inklusive Kartenausschnitt, Projektion und Layerkonfiguration lassen sich als JSON exportieren und jederzeit vollständig wiederherstellen – ideal für wiederkehrende Projektanforderungen.
+
+![Layer Import](assets/import_layer.png)
+
+<br>
+
+### Adress- & Ortssuche
+
+Die Volltextsuche ist über Nominatim (OpenStreetMap) integriert und deckt ganz Deutschland ab. Ergebnisse werden direkt auf der Karte verortet.
+
+![Adresssuche](assets/search_address.png)
+
+<br>
+
+### Hilfe & Onboarding
+
+Eine integrierte Hilfedokumentation unterstützt neue Nutzer beim Einstieg und erklärt alle Funktionen kontextsensitiv.
+
+![Hilfe](assets/help.png)
 
 ---
 
@@ -167,6 +165,82 @@ GDI-DE Kataloge (Bund + 16 Länder)
                   │
                   └─► Lizenz-Mapping
 ```
+
+<br>
+
+### CKAN-Datenkatalog
+
+Alle geernteten Metadaten werden in CKAN persistiert und sind über eine strukturierte Oberfläche durchsuchbar und filterbar.
+
+![CKAN Übersicht](assets/ckan_overview.png)
+
+<br>
+
+### Harvest-Verwaltung im Django Admin
+
+Alle konfigurierten CSW-Endpunkte (Bund + Länder) sind zentral verwaltet und mit Statusanzeige versehen.
+
+![Harvest-Quellen](assets/harvest_sources.png)
+
+<br>
+
+Harvesting-Jobs können über das Django Admin Dashboard ausgelöst, überwacht und protokolliert werden.
+
+![Harvest Django Admin](assets/harvest_django_admin_view.png)
+
+---
+
+## 📡 API
+
+GeoPortal-DE stellt eine vollständige REST-API bereit (JWT-gesichert). Die Dokumentation ist in zwei Formaten verfügbar.
+
+<br>
+
+### ReDoc
+
+![API-Dokumentation – ReDoc](assets/redoc.png)
+
+<br>
+
+### Swagger UI
+
+![API-Dokumentation – Swagger](assets/swagger.png)
+
+---
+
+## 🔧 Monitoring & Administration
+
+<br>
+
+### Backend Dashboard
+
+Das zentrale Admin-Dashboard bietet einen Überblick über alle laufenden Dienste, Nutzer, Tasks und Systemzustände.
+
+![Backend Dashboard](assets/backend_dashboard.png)
+
+<br>
+
+### Celery Flower
+
+Alle asynchronen Tasks (Harvesting, Export, Monitoring-Checks) werden über Celery verarbeitet und sind über Flower in Echtzeit einsehbar.
+
+![Celery Flower](assets/flower.png)
+
+<br>
+
+### Health Check
+
+Der integrierte Django Health Check überwacht Datenbank, Cache und alle kritischen Systemkomponenten kontinuierlich.
+
+![Django Health Check](assets/django_health_check.png)
+
+<br>
+
+### Systemstatistiken
+
+Laufende Kennzahlen zu CPU, Speicher, Task-Durchsatz und API-Antwortzeiten stehen als Dashboard zur Verfügung.
+
+![Systemstatistiken](assets/system_stats.png)
 
 ---
 
@@ -275,18 +349,6 @@ Im Lieferumfang enthalten:
 | 🔲 Geplant | **Metadateneditor** — Create / Update / Qualitätssicherung |
 | 🔲 Geplant | **Erweiterte Testabdeckung** — Unit-, Integrations- und Lasttests |
 | 🔲 Geplant | **Grafana + Prometheus Dashboards** — Alerts, SLA-Metriken, Betriebsübersicht |
-
----
-
-## 📸 Screenshots
-
-| Gesamtübersicht | WMS-Integration | WFS Feature-Abfrage |
-|---|---|---|
-| ![Übersicht](assets/overview.png) | ![BORIS WMS](assets/boris_wms.png) | ![BORIS WFS](assets/boris_wfs.png) |
-
-| WMTS-Dienst | Projektimport |
-|---|---|
-| ![WMTS](assets/wmts.png) | ![Layer Import](assets/layer-import.png) |
 
 ---
 
