@@ -90,15 +90,13 @@ WMS-Dienste werden per URL eingebunden, Capabilities automatisch geparst, Legend
 
 <br>
 
-### WFS Feature-Abfrage
+### WFS Download bei großen Datenmengen
 
-WFS-Dienste werden in drei Schritten eingebunden: Dienst-URL eingeben, Layer auswählen und Features im sichtbaren Kartenausschnitt laden. Attribute werden direkt in der Kartenansicht angezeigt und können als GeoJSON exportiert werden.
+WFS-Dienste werden in drei Schritten heruntergeladen: WFS-Dienst mit Layern auswählen - Step 1. Wenn pro Layer die Feature-Anzahl einem definierten Schwellwert übersteigt, kommt ein Download-Abfrage-Dialog, wobei alle Features oder nur die des aktuellen Kartenausschnittes (Step 2) ausgewählt werden können. Danach beginnt mit Step 3 der eigentliche Download der Daten.
 
-| Schritt 1 – Layer auswählen | Schritt 2 – Layer konfigurieren |
-|---|---|
-| ![WFS Layer auswählen](assets/wfs_layer_choose.png) | ![WFS Layer konfigurieren](assets/wfs_layer_choose_2.png) |
-
-![WFS GeoJSON Download](assets/wfs_layer_download.png)
+| Step 1: Layer auswählen | Step 2: Layer konfigurieren | Step 3: GeoJSON exportieren |
+|---|---|---|
+| ![WFS Layer auswählen](assets/wfs_layer_choose.png) | ![WFS Layer konfigurieren](assets/wfs_layer_choose_2.png) | ![WFS GeoJSON Download](assets/wfs_layer_download.png) |
 
 <br>
 
@@ -238,7 +236,7 @@ Der integrierte Django Health Check überwacht Datenbank, Cache und alle kritisc
 
 ### Systemstatistiken
 
-Laufende Kennzahlen zu CPU, Speicher, Task-Durchsatz und API-Antwortzeiten stehen als Dashboard zur Verfügung.
+Aggregierte System-Statistiken stehen zur Verfügung.
 
 ![Systemstatistiken](assets/system_stats.png)
 
