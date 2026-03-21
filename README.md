@@ -168,7 +168,7 @@ GDI-DE Kataloge (Bund + 16 Länder)
 
 ### CKAN-Datenkatalog
 
-Alle geernteten Metadaten werden in CKAN persistiert und sind über eine strukturierte Oberfläche durchsuchbar und filterbar.
+Alle geernteten Metadaten werden in CKAN persistiert und sind über eine strukturierte Oberfläche durchsuchbar und filterbar. Die Volltextsuche und räumliche Filterung werden über einen integrierten **Solr-Suchindex** bereitgestellt.
 
 ![CKAN Übersicht](assets/ckan_overview.png)
 
@@ -234,6 +234,14 @@ Der integrierte Django Health Check überwacht Datenbank, Cache und alle kritisc
 
 <br>
 
+### Solr Admin-Oberfläche
+
+Der integrierte Solr-Suchindex ist über die Solr Admin UI einsehbar und ermöglicht die Überwachung von Indexstatus, Abfragen und Konfiguration.
+
+![Solr Admin-Oberfläche](assets/solr_view.png)
+
+<br>
+
 ### Systemstatistiken
 
 Aggregierte System-Statistiken stehen zur Verfügung.
@@ -250,6 +258,7 @@ Aggregierte System-Statistiken stehen zur Verfügung.
 | **Frontend** | OpenLayers 10.8, Leaflet, JavaScript (ES6) |
 | **Authentifizierung** | JWT, API Keys |
 | **Caching** | Redis |
+| **Suchindex** | Solr 9 (CKAN-optimiert, spatial) |
 | **Task Queue** | Celery |
 | **Proxy** | httpx + SSRF-Schutz |
 | **Deployment** | Docker Compose, Nginx |
@@ -324,6 +333,7 @@ docker compose up -d
 # Enthaltene Services
 # ├── Django (Applikationsserver)
 # ├── PostgreSQL + PostGIS (Datenbank)
+# ├── Solr (Suchindex für CKAN)
 # ├── Redis (Cache & Message Broker)
 # ├── Celery (Task Queue)
 # ├── CKAN (Datenkatalog)
