@@ -1,236 +1,317 @@
-# GeoPortal‑DE
+<div align="center">
 
-![Enterprise Ready](https://img.shields.io/badge/Enterprise-Ready-0f4c81?style=for-the-badge)
-![Made in Germany](https://img.shields.io/badge/Made%20in-Germany-000000?style=for-the-badge)
-![GDI-DE](https://img.shields.io/badge/GDI--DE-Bund%20%2B%2016%20L%C3%A4nder-1e6f85?style=for-the-badge)
-![OpenLayers](https://img.shields.io/badge/OpenLayers-v10.8-87ceeb?style=for-the-badge)
-![CSW Harvesting](https://img.shields.io/badge/CSW-Harvesting%20Daily-2e8b57?style=for-the-badge)
-![Abo Modell](https://img.shields.io/badge/Modell-Subscription-6a0dad?style=for-the-badge)
+# GeoPortal-DE
 
----
+**Die zentrale Plattform für professionelle Geodaten in Deutschland**
 
-## Deutschlands Geodaten. Zentral. Professionell. Sofort nutzbar.
+[![Enterprise Ready](https://img.shields.io/badge/Enterprise-Ready-0f4c81?style=flat-square)](https://geoportal-de.example)
+[![Made in Germany](https://img.shields.io/badge/Made%20in-Germany-1a1a1a?style=flat-square)](https://geoportal-de.example)
+[![GDI-DE](https://img.shields.io/badge/GDI--DE-Bund%20%2B%2016%20Länder-1e6f85?style=flat-square)](https://www.gdi-de.org)
+[![OGC Compliant](https://img.shields.io/badge/OGC-Compliant-006699?style=flat-square)](https://www.ogc.org)
+[![Django 5.2](https://img.shields.io/badge/Django-5.2-092E20?style=flat-square&logo=django&logoColor=white)](https://www.djangoproject.com)
+[![OpenLayers](https://img.shields.io/badge/OpenLayers-10.8-1F6B75?style=flat-square)](https://openlayers.org)
+[![License](https://img.shields.io/badge/Lizenz-Proprietär-6a0dad?style=flat-square)](mailto:info@geoportal-de.example)
 
-**GeoPortal‑DE** ist Ihr professioneller Zugang zur gesamten öffentlichen Geodatenlandschaft Deutschlands – gebündelt, strukturiert und sofort einsatzbereit.
-
-Statt komplexer Einzelintegrationen, instabiler Live‑Schnittstellen oder zeitaufwändiger Dienstrecherchen erhalten Sie:
-
-* täglich aktualisierte Metadaten aus Bund und allen 16 Bundesländern
-* einen leistungsstarken, browserbasierten Kartenclient
-* eine unternehmensgerechte Infrastruktur mit Proxy, Verfügbarkeitsprüfung und Exportfunktionen
-
-Ob Behörde, Planungsbüro, Ingenieurdienstleister oder Versorgungsunternehmen – mit GeoPortal‑DE greifen Sie **schnell, rechtssicher und strukturiert** auf amtliche Geodaten zu.
+[Demo anfragen](#-zugang--demo) · [Dokumentation](#️-tech-stack) · [Kontakt aufnehmen](#-kontakt)
 
 ---
 
-# 🖥️ Showcase – Praxisbeispiele aus dem Portal
+</div>
 
-## 1️⃣ Gesamtüberblick & Layerstruktur
+## Überblick
 
-![Übersicht](assets/overview.png)
+GeoPortal-DE ist eine professionelle SaaS-Plattform für den strukturierten Zugriff auf die gesamte öffentliche Geodateninfrastruktur Deutschlands (GDI-DE). Statt fragmentierter Schnittstellen, instabiler Dienste und manueller Katalogressourcen erhalten Organisationen eine zentrale, hochperformante und rechtssichere Arbeitsumgebung.
 
-Zentrale Kartenansicht mit Basiskartenwahl, Layerbaum, Gruppenbildung und transparenter Steuerung aller eingebundenen Dienste.
+Täglich aktualisierte Metadaten aus Bund und allen 16 Bundesländern, eine vollständige OGC-konforme GIS-Arbeitsumgebung im Browser sowie eine produktionsreife Enterprise-Infrastruktur mit Proxy, Monitoring und Rollenverwaltung – alles aus einer Hand.
 
-## 2️⃣ WMS‑Integration (BORIS Beispiel)
-
-![BORIS WMS](assets/boris_wms.png)
-
-Einbindung eines WMS‑Dienstes inklusive Legendenabfrage, Layersteuerung und Projektion.
-
-## 3️⃣ WFS‑Feature‑Abfrage (BORIS WFS)
-
-![BORIS WFS](assets/boris_wfs.png)
-
-Direkte Feature‑Identifikation und Attributanzeige aus einem WFS‑Dienst – performant im sichtbaren Kartenausschnitt geladen.
-
-## 4️⃣ WMTS‑Dienst mit TileMatrixSet‑Erkennung
-
-![WMTS](assets/wmts.png)
-
-Automatische Auswahl des passenden TileMatrixSets je Projektion – stabil und hochperformant.
-
-## 5️⃣ ATOM‑Feed & Datenzugriff
-
-![ATOM](assets/atom.png)
-
-Integrierter GeoAtom Explorer zur strukturierten Darstellung von ATOM‑Datenquellen.
-
-## 6️⃣ Projektkonfiguration importieren
-
-![Layer Import](assets/layer-import.png)
-
-Import und Wiederherstellung kompletter Layer‑Setups inklusive Kartenausschnitt und Projektion – ideal für wiederkehrende Projekte.
+**Geeignet für:** Behörden · Ingenieurbüros · Stadtplanung · Energieversorger
 
 ---
 
-# 🚀 Highlights
+## Inhaltsverzeichnis
 
-* **Umfassende Datenbasis** – Tägliches Harvesting aller relevanten CSW‑Kataloge der GDI‑DE (WMS, WMTS, WFS, ATOM)
-* **Keine Live‑Abhängigkeit** – Metadaten werden strukturiert vorgehalten, Karten bei Bedarf geladen
-* **Professioneller Kartenclient** – OpenLayers‑basiert, performant und stabil
-* **Layerverwaltung auf Enterprise‑Niveau** – Drag & Drop, Gruppen, Transparenz, Metadaten, Identifikation
-* **Integrierter PDF‑Export** – Druckfertige Karten für Gutachten und Anlagen
-* **Proxy‑Architektur** – Keine CORS‑Probleme, stabile Dienstabfragen
-* **Verfügbarkeitsprüfung** – Ampelsystem für alle eingebundenen Dienste
-
----
-
-# 🗺️ Funktionsübersicht
-
-## 📚 CSW‑Metadatenkatalog
-
-* Volltextsuche über Titel, Abstract und Schlagwörter
-* Filter nach Diensttyp (WMS, WMTS, WFS, ATOM)
-* Detailansicht mit Kontakt, Gebühren, Ausdehnung und Layerliste
-* Mehrere Layer eines Dienstes werden automatisch gruppiert
-* ATOM‑Feeds öffnen sich im integrierten GeoAtom Explorer
-
-## 🧭 Layerbaum & Layerverwaltung
-
-* Übersichtliche Drag‑Drop‑Struktur
-* Automatische Gruppenbildung pro Dienst
-* Sichtbarkeit & Transparenz je Layer
-* WMS‑Legendenanzeige
-* WFS‑Feature‑Identifikation
-* Export als GeoJSON
-* JSON‑Export/Import kompletter Projektkonfigurationen
-
-## 🌐 Manuelle Dienstintegration
-
-* WMS, WMTS, WFS per URL
-* Automatische Capabilities‑Analyse mit Versions‑Fallback
-* WMTS TileMatrixSet‑Erkennung
-* WFS‑Ladevorgang im sichtbaren Kartenausschnitt (bis 10.000 Features)
-* Proxy‑gestützte, CORS‑freie Abfragen
-
-## 🖼️ Kartenfunktionen
-
-* Basiskarten: OSM, TopPlusOpen, basemap.de, OpenTopoMap
-* Projektionen: EPSG:3857, 4326, 25832, 25833, 31467
-* Mauskoordinaten im gewählten CRS
-* Geolokalisierung
-* Drag‑Zoom & Deutschland‑Zoom
-* Navigationshistorie
-
-## 📏 Messen & PDF‑Export
-
-* Dynamische Längen‑ und Flächenmessung
-* PDF‑Export mit Format (A0–A5), DPI (72–300), PNG/JPEG
-* Optionaler Titel, Gitternetz, EPSG‑Code, Layerliste, Datum
-* Druckoptimiert für Gutachten und Behördenunterlagen
-
-## 🔍 Adresssuche
-
-* Nominatim‑basierte Suche über Proxy
-* Ergebnisliste mit Zoomfunktion
-
-## 🐞 Debug‑Panel
-
-* Konsolidierte Browser‑Fehlermeldungen
-* Ein‑/ausblendbar
-* Ideal bei komplexen Dienstlandschaften
+- [Features](#-features)
+- [Funktionsübersicht](#-funktionsübersicht)
+- [Daten & Harvesting](#-daten--harvesting)
+- [Tech Stack](#️-tech-stack)
+- [Lizenzmodell](#-lizenzmodell)
+- [Zugang & Demo](#-zugang--demo)
+- [Self-Hosting](#️-self-hosting-enterprise)
+- [Roadmap](#-roadmap)
+- [Kontakt](#-kontakt)
+- [Rechtliches](#-rechtliches)
 
 ---
 
-# 🔧 Technische Basis
+## ✦ Features
 
-| Komponente       | Technologie                      |
-| ---------------- | -------------------------------- |
-| Frontend         | HTML5, CSS3, JavaScript (ES6)    |
-| Kartenbibliothek | OpenLayers v10.8                 |
-| Proxy            | Node.js                          |
-| Harvesting       | Täglicher CSW‑Abruf → JSON‑Cache |
-| Styling          | Eigenes responsives CSS          |
-| Deployment       | Kein Build‑Schritt erforderlich  |
+### Daten & Architektur
 
----
+| Feature | Beschreibung |
+|---|---|
+| **Tägliches CSW-Harvesting** | Vollständige Abdeckung aller GDI-DE Kataloge inkl. CKAN-Integration |
+| **Stabile Metadatenhaltung** | Keine Live-Abhängigkeit zu externen Diensten – hohe Verfügbarkeit |
+| **Automatische Format-Erkennung** | Unterstützung für WMS, WMTS und WFS out-of-the-box |
+| **ISO 19139 Parser** | Inkrementelle Updates via Hash-Vergleich, lxml-basiert |
 
-# 🏢 Für professionelle Nutzung konzipiert
+### Enterprise-Infrastruktur
 
-* Strukturierte, wiederkehrende Projektarbeit
-* Mandantenfähige Einsatzszenarien
-* On‑Premise‑Option für Behörden & KRITIS
-* Wartung & Updates inklusive
-* Erweiterbar um zusätzliche Datenquellen
+| Feature | Beschreibung |
+|---|---|
+| **CORS-Proxy** | httpx-basiert mit aktivem SSRF-Schutz |
+| **Authentifizierung** | JWT + API-Key-System mit Rollenverwaltung |
+| **Monitoring** | Prometheus-Metriken, Celery Flower, Ampelsystem für Dienstverfügbarkeit |
+| **Logging** | Strukturierte Logs für Audit- und Betriebszwecke |
 
----
+### GIS-Funktionalität
 
-# 📦 Abonnement & Lizenzmodell
-
-GeoPortal‑DE ist bewusst als **transparentes Subscription‑Modell** konzipiert – ohne versteckte Kosten, ohne komplexe Lizenzstrukturen.
-
-## 🔹 Basic – 49 € / Monat
-
-Ideal für Einzelanwender und kleinere Projekte
-
-* Zugriff auf das öffentliche Portal
-* Bis zu 2 gleichzeitige Instanzen
-* Standard‑PDF‑Export
-* E‑Mail‑Support
-
-## 🔹 Professional – 199 € / Monat
-
-Für Teams und mittelständische Unternehmen
-
-* Unbegrenzte Layeranzahl
-* Erweiterter PDF‑Export
-* JSON‑Projekt‑Export/Import
-* Prioritäts‑Support
-* Erweiterte Debug‑ und Prüfmechanismen
-
-## 🔹 Enterprise – Individuelles Angebot
-
-Für Behörden, Großunternehmen und Infrastrukturbetreiber
-
-* On‑Premise‑Installation
-* Individuelle Anpassungen
-* SLA & definierte Reaktionszeiten
-* Integration zusätzlicher Datenquellen
-* Dedizierter Ansprechpartner
-
-**Testzugang:** 14 Tage kostenfrei und unverbindlich.
+| Feature | Beschreibung |
+|---|---|
+| **WFS Feature-Abfrage** | Direkte Attributanzeige im sichtbaren Kartenausschnitt |
+| **Dynamischer Layerbaum** | Drag & Drop, Gruppenbildung, Transparenzsteuerung |
+| **Projekt Import / Export** | Vollständige Wiederherstellung von Layer-Setups inkl. Ausschnitt und Projektion |
+| **PDF-Export** | Formate A0–A5, 72–300 DPI, PNG/JPEG, Gitternetz + Metadaten |
 
 ---
 
-# 🚀 Schnellstart
+## 🗺 Funktionsübersicht
 
-Testlizenz per E‑Mail anfordern.
+<details>
+<summary><strong>Metadatenkatalog</strong></summary>
+
+- Volltextsuche über Titel, Abstract und Keywords
+- Filter nach Organisation und Diensttyp
+- Detailansicht mit Lizenz, Gebühren und Kontaktinformationen
+- One-Click Layer-Integration in die Kartenansicht
+
+</details>
+
+<details>
+<summary><strong>Layerverwaltung</strong></summary>
+
+- Drag & Drop Sortierung
+- Individuelle Transparenzsteuerung pro Layer
+- WMS-Legenden-Anzeige
+- WFS-Attributanzeige und GeoJSON-Export
+
+</details>
+
+<details>
+<summary><strong>Diensteintegration</strong></summary>
+
+- WMS, WMTS und WFS via URL
+- Capabilities Parsing mit automatischem Fallback
+- WMTS TileMatrix-Erkennung je Projektion
+- Proxy-Betrieb ohne CORS-Einschränkungen
+
+</details>
+
+<details>
+<summary><strong>Kartenfunktionen</strong></summary>
+
+- **Basemaps:** OSM, BKG, OpenTopoMap
+- **Projektionen:** EPSG 3857, 4326, 25832, 25833, 31467
+- Geolokalisierung, Navigation und Zoom-Werkzeuge
+
+</details>
+
+<details>
+<summary><strong>Analyse & Export</strong></summary>
+
+- Längen- und Flächenmessung im Kartenausschnitt
+- PDF-Export (A0–A5, 72–300 DPI, PNG/JPEG)
+- Gitternetz- und Metadaten-Overlay im Export
+
+</details>
+
+<details>
+<summary><strong>Suche</strong></summary>
+
+- Nominatim-Integration (OpenStreetMap)
+- Deutschlandweite Adress- und Ortssuche
+
+</details>
+
+<details>
+<summary><strong>Admin & Monitoring</strong></summary>
+
+- Django Admin Dashboard
+- Celery + Flower für Aufgabenverwaltung
+- Prometheus-Metriken
+- Strukturierte Betriebsprotokolle
+
+</details>
 
 ---
 
-# 🛠️ Enterprise Self‑Hosting
+## 🔄 Daten & Harvesting
 
-Enthalten im Installationspaket:
+GeoPortal-DE betreibt ein vollständig automatisiertes Harvesting-System, das täglich alle relevanten GDI-DE Kataloge synchronisiert.
 
-* Node.js‑Harvester + Proxy
-* Frontend‑Code (HTML/CSS/JS)
-* Konfigurationsleitfaden
-* Unterstützung bei der Einrichtung
+```
+GDI-DE Kataloge (Bund + 16 Länder)
+        │
+        ▼
+  CSW-Harvesting (täglich)
+        │
+        ├─► ISO 19139 Parser (lxml)
+        │         │
+        │         ▼
+        │   Hash-Vergleich → Inkrementelles Update
+        │
+        ├─► Automatische Ressourcen-Erkennung
+        │         │
+        │         └─► WMS / WMTS / WFS Klassifikation
+        │
+        └─► CKAN Push
+                  │
+                  └─► Lizenz-Mapping
+```
 
 ---
 
-# 📞 Kontakt
+## ⚙️ Tech Stack
+
+| Bereich | Technologie |
+|---|---|
+| **Backend** | Django 5.2, Django REST Framework, PostgreSQL, PostGIS |
+| **Frontend** | OpenLayers 10.8, Leaflet, JavaScript (ES6) |
+| **Authentifizierung** | JWT, API Keys |
+| **Caching** | Redis |
+| **Task Queue** | Celery |
+| **Proxy** | httpx + SSRF-Schutz |
+| **Deployment** | Docker Compose, Nginx |
+| **Monitoring** | Prometheus, Celery Flower |
+
+---
+
+## 💰 Lizenzmodell
+
+> Alle Preise zzgl. gesetzlicher MwSt. Jährliche Abrechnung auf Anfrage möglich.
+
+### Basic — 999 €&thinsp;/&thinsp;Monat
+
+Für kleinere Teams mit standardisierten Anforderungen.
+
+- Bis zu **5 Nutzer**
+- Standard PDF-Export
+- E-Mail-Support (Reaktionszeit < 24 h)
+
+---
+
+### Professional — 1.499 €&thinsp;/&thinsp;Monat
+
+Für Organisationen mit erweiterten Anforderungen.
+
+- **Unbegrenzte Nutzer**
+- Voller PDF-Export (alle Formate und Auflösungen)
+- **API-Zugriff** (REST + JWT)
+- Priority Support (Reaktionszeit < 4 h)
+
+---
+
+### Enterprise — Individuell
+
+Für Behörden, Stadtwerke und Unternehmen mit hohen Verfügbarkeits- und Datenschutzanforderungen.
+
+- **On-Premise Deployment** (vollständiger Docker-Stack)
+- Custom Features nach Anforderung
+- **SLA & 24/7 Support**
+- LDAP / Active Directory Integration
+- Mandantenfähigkeit
+
+> Für ein individuelles Angebot: [info@geoportal-de.example](mailto:info@geoportal-de.example)
+
+---
+
+## 🚀 Zugang & Demo
+
+GeoPortal-DE wird nicht als anonymer Self-Service angeboten. Der Zugang erfolgt strukturiert, um eine optimale Einrichtung für den jeweiligen Einsatzzweck sicherzustellen.
+
+```
+1. Kontaktaufnahme
+   info@geoportal-de.example
+
+2. Kurze Abstimmung
+   Einsatzzweck, Team-Größe, technische Anforderungen
+
+3. Demo-Zugang oder Live-Demo-Termin
+   Angepasst an Ihren konkreten Use Case
+```
+
+---
+
+## 🛠️ Self-Hosting (Enterprise)
+
+GeoPortal-DE kann vollständig On-Premise betrieben werden. Der Enterprise-Stack umfasst:
+
+```bash
+# Stack starten
+docker compose up -d
+
+# Enthaltene Services
+# ├── Django (Applikationsserver)
+# ├── PostgreSQL + PostGIS (Datenbank)
+# ├── Redis (Cache & Message Broker)
+# ├── Celery (Task Queue)
+# ├── CKAN (Datenkatalog)
+# └── Nginx (Reverse Proxy)
+```
+
+Im Lieferumfang enthalten:
+
+- Setup-Skripte und Konfigurationsdokumentation
+- Backup- & Restore-Prozeduren
+- Anpassbare Umgebungsvariablen
+- Monitoring-Integration (Prometheus + Grafana, optional)
+
+---
+
+## 🧭 Roadmap
+
+| Status | Feature |
+|---|---|
+| 🔲 Geplant | **GeoAtom-Explorer** — Integration in die Django-Umgebung |
+| 🔲 Geplant | **Metadateneditor** — Create / Update / Qualitätssicherung |
+| 🔲 Geplant | **Erweiterte Testabdeckung** — Unit-, Integrations- und Lasttests |
+| 🔲 Geplant | **Grafana + Prometheus Dashboards** — Alerts, SLA-Metriken, Betriebsübersicht |
+
+---
+
+## 📸 Screenshots
+
+| Gesamtübersicht | WMS-Integration | WFS Feature-Abfrage |
+|---|---|---|
+| ![Übersicht](assets/overview.png) | ![BORIS WMS](assets/boris_wms.png) | ![BORIS WFS](assets/boris_wfs.png) |
+
+| WMTS-Dienst | Projektimport |
+|---|---|
+| ![WMTS](assets/wmts.png) | ![Layer Import](assets/layer-import.png) |
+
+---
+
+## 📞 Kontakt
 
 **wm87 GbR**
-Musterstraße 123
-12345 Musterstadt
-Deutschland
+Musterstraße 123 · 12345 Musterstadt · Deutschland
 
-E‑Mail: [info@geoportal-de.example](mailto:info@geoportal-de.example)
-Telefon: +49 123 4567890
-Handelsregister: HRB 98765
-USt‑ID: DE987654321
+| Kanal | Adresse |
+|---|---|
+| E-Mail | [info@geoportal-de.example](mailto:info@geoportal-de.example) |
+| Telefon | +49 123 4567890 |
 
 ---
 
-# 📄 Rechtliches
+## 📄 Rechtliches
 
-Die bereitgestellten Geodaten unterliegen den Lizenzbedingungen der jeweiligen Datenquellen (Bund, Länder, BKG, OpenStreetMap u.a.).
-Für Inhalte externer Dienste wird keine Haftung übernommen.
-Design und Software sind Eigentum der wm87 GbR.
+Geodaten unterliegen den Lizenzbedingungen der jeweiligen Anbieter (Bund, Länder, BKG, OpenStreetMap Contributors). GeoPortal-DE übernimmt keine Haftung für die Verfügbarkeit, Richtigkeit oder Aktualität externer Dienste.
 
 ---
 
-# GeoPortal‑DE
+<div align="center">
 
-**Die zentrale Plattform für die professionelle Nutzung öffentlicher Geodaten in Deutschland.**
+**GeoPortal-DE** — Deutschlands Geodaten. Zentral. Sicher. Unternehmensbereit.
+
+[info@geoportal-de.example](mailto:info@geoportal-de.example) · [geoportal-de.example](https://geoportal-de.example) · © 2025 wm87 GbR
+
+</div>
