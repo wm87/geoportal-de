@@ -88,6 +88,10 @@ WMS-Dienste werden per URL eingebunden, Capabilities automatisch geparst, Legend
 
 ![WMS – Digitales Orthophoto Sachsen](assets/dop_wms_sn.png)
 
+![WMS – Digitales Orthophoto Sachsen](assets/dop_wms_sn_se.png)
+
+![WMS – Digitales Orthophoto Sachsen](assets/dop_wms_sn_se_dd.png)
+
 <br>
 
 ### WFS Download bei großen Datenmengen
@@ -106,6 +110,8 @@ Der Ressourcen-Browser zeigt alle eingebundenen und verfügbaren Dienste mit Sta
 
 ![Ressourcenübersicht](assets/resources.png)
 
+![Ressourcenübersicht](assets/wfs_layer_choose_se.png)
+
 <br>
 
 ### Externe Dienste
@@ -122,6 +128,8 @@ Komplette Layer-Setups inklusive Kartenausschnitt, Projektion und Layerkonfigura
 
 ![Layer Import](assets/import_layer.png)
 
+![Layer Import](assets/dtk_wms_sn_se.png)
+
 <br>
 
 ### Adress- & Ortssuche
@@ -137,6 +145,8 @@ Die Volltextsuche ist über Nominatim (OpenStreetMap) integriert und deckt ganz 
 Eine integrierte Hilfedokumentation unterstützt neue Nutzer beim Einstieg und erklärt alle Funktionen kontextsensitiv.
 
 ![Hilfe](assets/help.png)
+
+![Hilfe](assets/help_se.png)
 
 ---
 
